@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Calculator - Check Driving Eligibility</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 80%;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚗 Driving Eligibility Checker</h1>
+    <p>Enter your age:</p>
+    <input type="number" id="age" placeholder="Enter your age">
+    <button onclick="checkEligibility()">Check Now</button>
+    <div id="result" class="result"></div>
+
+    <script>
+        function checkEligibility() {
+            let age = parseInt(document.getElementById('age').value);
+            let resultDiv = document.getElementById('result');
+            
+            if(age > 60){
+                resultDiv.innerHTML = "✅ You can drive and you are a senior citizen";
+            }
+            else if(age > 25){
+                resultDiv.innerHTML = "✅ You are perfect for driving";
+            }
+            else if(age >= 18){
+                resultDiv.innerHTML = "✅ Now you are eligible for drive";
+            }
+            else{
+                resultDiv.innerHTML = "❌ Sorry, you are not eligible for driving";
+            }
+        }
+    </script>
+</body>
+</html>
